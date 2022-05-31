@@ -4,7 +4,7 @@
 
 Приложение представляет из себя веб-сервис.
 
-![](../../../AppData/Local/Temp/service.png)
+<img width="705" alt="service" src="https://user-images.githubusercontent.com/91226368/171269689-18911cd9-085a-4ac0-8a36-d0a123af2d72.png">
 
 Приложение предлагает купить тур по определённой цене с помощью двух способов:
 
