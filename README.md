@@ -35,3 +35,6 @@
 3. Запустить контейнеры БД командой docker-compose up -d
 4. Ввести в терминале команду "java -jar ./aqa-shop.jar"
 5. Перейти в браузере по ссылке http://localhost:8080/
+
+## Перечень проектной документации
+1. [План автоматизации](https://github.com/EfimovSI/aqa-coursework/blob/916dff08fa4414af402cf57b2de5265591ee15c1/docs/Plan.md)
