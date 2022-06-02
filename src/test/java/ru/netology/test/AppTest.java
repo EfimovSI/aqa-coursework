@@ -1,23 +1,31 @@
 package ru.netology.test;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataGenerator;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class AppTest {
 
-    @Test
-    void shouldGet() {
-        System.out.println(DataGenerator.getLongCardNumber());
-        System.out.println(DataGenerator.getShortCardNumber());
-        System.out.println(DataGenerator.getCardNumberFromSymbols());
-        System.out.println(DataGenerator.getCardNumberFromLetters());
-        System.out.println(DataGenerator.getValidMonth());
-        System.out.println(DataGenerator.getValidYear());
-        System.out.println(DataGenerator.getYearFromSymbols());
-        System.out.println(DataGenerator.getYearWithZeroes());
-        System.out.println(DataGenerator.getDistantFutureYear());
-        System.out.println(DataGenerator.getOneDigitYear());
-        System.out.println(DataGenerator.getPastYear());
-        System.out.println(DataGenerator.getDigitsForName());
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
+    }
+
+    @BeforeEach
+    public void setUp() {
+        open("http://localhost:8080");
+    }
+    @Test
+    void shouldGet() {}
 }

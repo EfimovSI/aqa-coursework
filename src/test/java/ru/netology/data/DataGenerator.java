@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Year;
 import java.util.Locale;
@@ -125,7 +124,7 @@ public class DataGenerator {
     }
 
     public static String getShortOwnerName() {
-        return faker.lorem().characters(1,false, false).toUpperCase();
+        return faker.lorem().characters(1, false, false).toUpperCase();
     }
 
     public static String getLongOwnerName() {
@@ -160,6 +159,10 @@ public class DataGenerator {
     // Поле "CVC/CVV"
     public static String getValidCvc() {
         return String.valueOf(new Random().nextInt(899) + 100);
+    }
+
+    public static String getCvcFromZeroes() {
+        return "000";
     }
 
     public static String getLettersForCvc() {
