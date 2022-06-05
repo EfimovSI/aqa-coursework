@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.data.ApiUtils;
 import ru.netology.data.DataGenerator.Info;
 import ru.netology.data.DbUtils;
 import ru.netology.page.HomePage;
@@ -50,6 +51,7 @@ public class AppTest {
         buyPage.sendFilledForm(info);
         buyPage.successfullPayment();
         assertEquals("APPROVED", DbUtils.getPaymentStatus());
+        assertEquals("APPROVED", ApiUtils.getStatusOfGivenCards(info));
     }
 
     @Test
@@ -59,6 +61,7 @@ public class AppTest {
         buyPage.sendFilledForm(info);
         buyPage.successfullPayment();
         assertEquals("APPROVED", DbUtils.getPaymentStatus());
+        assertEquals("APPROVED", ApiUtils.getStatusOfGivenCards(info));
     }
 
     @Test
@@ -68,6 +71,7 @@ public class AppTest {
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
         assertEquals("DECLINED", DbUtils.getPaymentStatus());
+        assertEquals("DECLINED", ApiUtils.getStatusOfGivenCards(info));
     }
 
     // Негативные сценарии
@@ -92,6 +96,7 @@ public class AppTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
+        ApiUtils.getStatusCodeOfUnknownCards(info);
     }
 
     @Test
@@ -116,6 +121,7 @@ public class AppTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
+        ApiUtils.getStatusCodeOfUnknownCards(info);
     }
 
     @Test
@@ -308,7 +314,7 @@ public class AppTest {
     // Поле "CVC/CVV"
     @Test
     void shouldNotSendWithEmptyCvc() {
-        var info = new Info(getApprovedCardNumber(), getValidMonth(), getValidYear(), getValidOwner(),null);
+        var info = new Info(getApprovedCardNumber(), getValidMonth(), getValidYear(), getValidOwner(), null);
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.emptyCvcError();
