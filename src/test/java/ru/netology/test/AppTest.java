@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataGenerator.Info;
+import ru.netology.data.DbUtils;
 import ru.netology.page.HomePage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -28,6 +29,7 @@ public class AppTest {
     @BeforeEach
     public void setUp() {
         open("http://localhost:8080");
+        DbUtils.clearDb();
     }
 
     // Позитивные сценарии
@@ -47,6 +49,7 @@ public class AppTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.successfullPayment();
+        assertEquals("APPROVED", DbUtils.getPaymentStatus());
     }
 
     @Test
@@ -55,6 +58,7 @@ public class AppTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.successfullPayment();
+        assertEquals("APPROVED", DbUtils.getPaymentStatus());
     }
 
     @Test
@@ -63,6 +67,7 @@ public class AppTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
+        assertEquals("DECLINED", DbUtils.getPaymentStatus());
     }
 
     // Негативные сценарии
