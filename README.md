@@ -1,5 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/l60kf1i65di945a2?svg=true)](https://ci.appveyor.com/project/EfimovSI/aqa-coursework-ot2d0)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/wpssgrhwajsx5erk?svg=true)](https://ci.appveyor.com/project/EfimovSI/aqa-coursework-scwli)
 # Проект автоматизации тестирования комплексного сервиса для покупки тура
 
 В рамках настоящего проекта планируется осуществить автоматизацию тестирования комплексного сервиса для покупки тура, взаимодействующего с СУБД и API банка.
