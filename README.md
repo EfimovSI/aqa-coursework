@@ -43,4 +43,4 @@
 
 
 ## Перечень проектной документации
-1. [План автоматизации](https://github.com/EfimovSI/aqa-coursework/blob/916dff08fa4414af402cf57b2de5265591ee15c1/docs/Plan.md)
+1. [План автоматизации](https://github.com/EfimovSI/aqa-coursework/blob/bd34b0c8296c9a93fbf74f755abc9cfe9222e747/docs/Plan.md)
