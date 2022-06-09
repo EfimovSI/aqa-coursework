@@ -20,7 +20,7 @@ public class BuyPage {
     private SelenideElement cvcField = $(byText("CVC/CVV")).parent().$(".input__control");
     private SelenideElement continueButton = $(byText("Продолжить"));
     private SelenideElement notificationSuccess = $(".notification_status_ok");
-    private SelenideElement notificationError = $(".notification_status_error .notification__content");
+    private SelenideElement notificationError = $(".notification_status_error");
     private SelenideElement cardNumberSub = $(byText("Номер карты")).parent().$(".input__sub");
     private SelenideElement monthSub = $(byText("Месяц")).parent().$(".input__sub");
     private SelenideElement yearSub = $(byText("Год")).parent().$(".input__sub");
@@ -42,11 +42,11 @@ public class BuyPage {
     }
 
     public void successfullPayment() {
-        notificationSuccess.shouldHave(text("Операция одобрена Банком."), Duration.ofSeconds(10));
+        notificationSuccess.shouldHave(text("Операция одобрена Банком."), Duration.ofSeconds(12));
     }
 
     public void declinedPayment() {
-        notificationError.shouldHave(text("Ошибка! Банк отказал в проведении операции."), Duration.ofSeconds(10));
+        notificationError.shouldHave(text("Ошибка! Банк отказал в проведении операции."), Duration.ofSeconds(12));
     }
 
     public void emptyForm() {

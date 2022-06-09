@@ -6,7 +6,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.netology.data.ApiUtils;
 import ru.netology.data.DataGenerator.Info;
 import ru.netology.data.DbUtils;
 import ru.netology.page.HomePage;
@@ -117,7 +116,6 @@ public class UiTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
-        ApiUtils.getStatusCodeOfUnknownCards(info);
     }
 
     @Test

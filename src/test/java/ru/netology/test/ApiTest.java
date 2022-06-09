@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.data.ApiUtils;
 import ru.netology.data.DataGenerator;
 import ru.netology.data.DbUtils;
+import ru.netology.page.HomePage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataGenerator.Info.*;
@@ -53,6 +54,12 @@ public class ApiTest {
     @Test
     void shouldNotPayWithUnknownCardNumber() {
         var info = new DataGenerator.Info(getUnknownCardNumber(), getValidMonth(), getValidYear(), getValidOwner(), getValidCvc());
+        ApiUtils.getStatusCodeOfUnknownCards(info);
+    }
+
+    @Test
+    void shouldNotPayWithCardNumberFromZeroes() {
+        var info = new DataGenerator.Info(getCardNumberFromZeroes(), getValidMonth(), getValidYear(), getValidOwner(), getValidCvc());
         ApiUtils.getStatusCodeOfUnknownCards(info);
     }
 }
