@@ -32,7 +32,7 @@ public class BuyPage {
         buyHeader.shouldBe(visible);
     }
 
-    public void sendFilledForm (Info info){
+    public void sendFilledForm(Info info) {
         cardNumberField.setValue(info.getNumber());
         monthField.setValue(info.getMonth());
         yearField.setValue(info.getYear());

@@ -13,7 +13,8 @@ import java.util.Random;
 public class DataGenerator {
     public static Faker faker = new Faker(new Locale("en"));
 
-    private DataGenerator() {}
+    private DataGenerator() {
+    }
 
     @Value
     @RequiredArgsConstructor

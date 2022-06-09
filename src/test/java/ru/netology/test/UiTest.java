@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataGenerator.Info.*;
 
-public class AppTest {
+public class UiTest {
 
     @BeforeAll
     static void setUpAll() {
@@ -51,7 +51,6 @@ public class AppTest {
         buyPage.sendFilledForm(info);
         buyPage.successfullPayment();
         assertEquals("APPROVED", DbUtils.getPaymentStatus());
-        assertEquals("APPROVED", ApiUtils.getStatusOfGivenCards(info));
     }
 
     @Test
@@ -61,7 +60,6 @@ public class AppTest {
         buyPage.sendFilledForm(info);
         buyPage.successfullPayment();
         assertEquals("APPROVED", DbUtils.getPaymentStatus());
-        assertEquals("APPROVED", ApiUtils.getStatusOfGivenCards(info));
     }
 
     @Test
@@ -71,7 +69,6 @@ public class AppTest {
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
         assertEquals("DECLINED", DbUtils.getPaymentStatus());
-        assertEquals("DECLINED", ApiUtils.getStatusOfGivenCards(info));
     }
 
     // Негативные сценарии
@@ -96,7 +93,6 @@ public class AppTest {
         var buyPage = new HomePage().buy();
         buyPage.sendFilledForm(info);
         buyPage.declinedPayment();
-        ApiUtils.getStatusCodeOfUnknownCards(info);
     }
 
     @Test
