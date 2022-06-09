@@ -44,3 +44,6 @@
 
 ## Перечень проектной документации
 1. [План автоматизации](https://github.com/EfimovSI/aqa-coursework/blob/bd34b0c8296c9a93fbf74f755abc9cfe9222e747/docs/Plan.md)
+2. [Отчет о тестировании UI](https://github.com/EfimovSI/aqa-coursework/blob/f30d3cf2174bdfe0bac80caed1b8d6cbbb16973f/docs/UiReport.md)
+3. [Отчет о тестировании API](https://github.com/EfimovSI/aqa-coursework/blob/7877d9d50adec4ddc39eec5f92c0d9bbc0e0cd9d/docs/ApiReport.md)
+4. [Отчет по итогам автоматизации](https://github.com/EfimovSI/aqa-coursework/blob/f00aef2812133355d60d20d5e53fd3297d30bdc4/docs/Summary.md)
